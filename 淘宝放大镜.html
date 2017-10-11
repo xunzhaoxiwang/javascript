@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <title></title>
+    <style type="text/css">
+      *{
+        margin:0;
+        padding:0;
+      }
+      body{
+        background-color: #fff
+      }
+      ul,dl{
+        list-style: none;
+      }
+      .head{
+        background: #f2f2f2;
+        width: 1349px;
+        height: 27px;
+        line-height: 27px;
+        font-size: 14px;
+      }
+      .headInner{
+        width: 1190px;
+        height: 26px;
+        margin:0 auto;
+      }
+      .headInner span{
+        margin-right: 10px;
+      }
+      .headInner span:hover a{
+        color: red;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      .headInner i{
+        font-style: normal;
+        margin-right: 10px;
+      }
+      .head ul{
+        float: right;
+        height: 26px;
+        /*overflow: hidden;*/
+      }
+      .head ul li{
+        float: left;
+        margin-right: 5px;
+        position: relative;
+        border-left: 1px solid transparent;
+        border-right: 1px solid transparent;
+
+
+      }
+       .head  li a:hover{
+          color: red;
+          text-decoration: underline;
+          cursor: pointer;
+       }
+       .drop{
+          background-color: #fff;
+          position: absolute;
+          width: 86px;
+          left: 0px;
+          top: 28px;
+          display: none;
+           z-index: 1;
+       }
+     .arrow{
+        display: inline-block;
+        width:0;
+        height: 0;
+        border:3px solid transparent;
+        border-top:3px solid #999;
+      }
+      .on{
+        background-color: #fff;
+      }
+      .dropNav{
+        width: 1188px;
+        height: 251px;
+        position: absolute;
+        right: 0px;
+        top:28px;
+        z-index: 1;
+        border:1px solid #eee;
+        display: none;
+        background-color: #fff;
+      }
+      .dropNav h2{
+        color: #f56a00;
+      }
+      .dropNav ul.first{
+        width: 410px;
+        height: 200px;
+        float: left;
+        margin-top: 25px
+      }
+      ul.first li{
+       width: 90px;
+      }
+      .dropNav ul.second {
+        margin-top: 25px;
+        width: 407px;
+        height: 200px;
+        float: left;
+       }
+       ul.second h2{
+        color: #2263d4;
+      }
+     .dropNav ul.second li{
+        width: 90px;
+        
+      }
+      .dropNav ul.second li:hover a{
+        color: #2263d4;
+      }
+      ul.three{
+        width: 211px;
+        height: 200px;
+        margin-top: 25px;
+        /*float: right;*/
+        float: left;
+      }
+      ul.three h2{
+        color: #000;
+      }
+      ul.three li{
+        
+        width: 90px;
+      }
+      ul.three li a:hover{
+        color: #000;
+      }
+      ul.four{
+        width:160px;
+        height: 200px;
+        margin-top: 25px;
+        float: left;
+
+      }
+      ul.four h2{
+        color: #666;
+      }
+      ul.four li{ 
+        width: 90px;  
+      }
+      ul.four li a:hover{ 
+        color: #666;
+      }
+      .serachBox{
+        width: 1190px;
+        height: 85px;
+       /* line-height: 85px;*/
+        margin: 0 auto;
+      }
+      .serachBox h1{
+        width: 142px;
+        height: 26px;
+        font-size: 20px;
+        color: red;
+        margin-top: 20px;
+        float: left;
+      }
+      .desc strong{
+        color: #333;
+        font-size: 12px;
+      }
+      .desc{
+         margin-top: 20px;
+         float: left;
+         margin-left: 100px;
+      }
+       .serachBox .sub{
+         float: left;
+        width: 535px;
+        height: 30px;
+        border:3px solid red;
+         margin-top: 20px;
+         margin-left: 100px;
+      }
+      .sub .text{
+        width: 365px;
+        height: 30px;
+        border:none;
+        outline: 0;
+        padding-left: 10px;
+      }
+      .sub button{
+        float: left;
+        border:none;
+        outline: 0;
+        width: 80px;
+        height: 30px;
+        background-color: red;
+        color: #fff;
+      }
+      .sub .bottom{
+        color: #999;
+        margin-top: 7px;
+      }
+      .sub .bottom a{
+          display: inline-block;
+          border-right: 1px solid red;
+          padding-left: 5px;
+          padding-right: 5px;
+          line-height: 15px;
+       }
+       .boxSearch{
+        width: 100%;
+        height: 85px;
+        border:none;
+        outline: 0;
+        border-bottom:1px solid #c8baaa;
+       }
+       /**/
+       .recomBox{
+        width: 1349px;
+        height: 150px;
+       }
+       .recomBox .recom{
+        width: 990px;
+        margin: 0 auto;
+        position: relative;
+       }
+        .recomBox .recom .bg{
+          width: 1920px;
+          height: 150px;
+          display: block;
+          position: absolute;
+          left: -548px;
+          top: 0;
+         background: url("./img/TB21kqjlm3PL1JjSZFtXXclRVXa_!!901409638.gif") 0 0 no-repeat;
+         cursor: pointer;
+       }
+       .list{
+        display: inline-block;
+        position: absolute;
+        left: -65px;
+        top: 120px;
+        color: #fff;
+
+       }
+       .list a{
+          margin-right: 4px;
+        }
+        .list a:hover{
+          color: red;
+          cursor: pointer;
+        }
+        .detail{
+          width: 100%;
+          margin-top:20px;
+        }
+        .goodDetail{
+          width: 1120px;
+          /*height: 925px;*/
+          height: 843px;
+          margin: 0 auto;
+         
+        }
+        .good{
+          width: 420px;
+          height: 420px;
+          line-height: 420px;
+          text-align: center;
+          border: 1px solid red;
+          vertical-align: middle;
+          position: relative;
+          float: left;
+        }
+        .fangdajing{
+          width: 200px;
+          height: 200px;
+          background: url("./img/scope.png");
+          position: absolute;
+          left: 0;
+          top:0;
+          display: none;
+          cursor: move;
+        }
+        .fangdahou{
+          width: 430px;
+          height: 430px;
+          position: absolute;
+          left: 500px;
+          top:0;
+          background: url('./img/datu2.jpg');
+          display: none;
+        }
+        .middle{
+          width: 530px;
+          float: left;
+          padding-left: 20px;
+        }
+        .right{
+          float: right;
+          width: 146px;
+          height: 560px;
+          /*border: 1px solid red;*/
+          text-align: center;
+          /*margin-left: 10px;*/
+        }
+        .right span{
+          font-size: 12px;
+          display: block;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          margin-top: 8px;
+        }
+        .right img{
+          margin-top: 13px;
+        }
+        .detail h1{
+          font-size: 18px;
+        }
+        .goodDetail p{
+          color: #FF0036;
+        }
+         .goodDetail .smallImgs{
+           width: 476px;
+           height: 82px;
+         }
+        .free{
+          font-size:14px;
+          height: 30px;
+        }
+        .address{
+          height: 30px;
+          margin-left: 20px;
+        }
+        .xiaoliang{
+          width: 510px;
+          height: 38px;
+          margin-top: 20px;
+          line-height: 38px;
+          border-top:1px dotted #c9c9c9;
+          border-bottom: 1px dotted #c9c9c9;
+        }
+        .xiaoliang span{
+          display: inline-block;
+          width: 165px;
+        }
+
+        ul li.version{
+          width: 500px;
+          height: 42px;
+          line-height: 42px;
+          margin-top: 10px;
+
+          
+        }
+         ul li.version span{
+          display: inline-block;
+          width: 110px;
+          height: 30px;
+          border:1px solid #b8b7bd;
+          margin-left: 3px;
+          text-align: center;
+         }
+         ul li.version span:hover{
+          border: 1px solid red;
+          cursor: pointer;
+         }
+        ul li.version span:first-child{
+         
+          margin-left: 34px;
+        }
+        ul li.color span{
+          border:1px solid #b8b7bd;
+          width: 70px;
+          height: 30px;
+          line-height: 30px;
+          display: inline-block;
+          margin-left: 3px;
+          text-align: center;
+        }
+         ul li.color span:hover{
+          border: 1px solid red;
+          cursor: pointer;
+         }
+         ul li.phoneType{
+          margin-top: 10px;
+
+         }
+          ul li.phoneType span{
+             margin-left: 3px;
+            display: inline-block;
+            width: 70px;
+            height: 30px;
+            border:1px solid #b8b7bd;
+          }
+          ul li.store span{
+             display: inline-block;
+             margin-top: 10px;
+             margin-left: 3px;
+            width: 70px;
+            height: 30px;
+            border:1px solid #b8b7bd;
+          }
+          ul li.versionAddress{
+            margin-top: 10px;
+          }
+           ul li.versionAddress span{
+             display: inline-block;
+             width: 70px;
+             height: 30px;
+              border:1px solid #b8b7bd;
+           }
+           ul li.phoneNum{
+            margin-top: 10px;
+           }
+           ul li.phoneNum span{
+            display: inline-block;
+             width: 50px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+             border:1px solid #b8b7bd;
+             margin-left: 4px;
+           }
+            ul li.phoneNum span.add{
+              width: 10px;
+              height: 10px;
+              line-height: 10px;
+              display: block;
+              margin-left: 125px;
+            }
+            ul li.phoneNum span.mul{
+               width: 10px;
+              height: 10px;
+              line-height: 10px;
+              display:block;
+              margin-left: 125px;
+              margin-top: 7px;
+            }
+             ul li.phoneNum .opera{
+              width: 30px;
+              height: 30px;
+              float: left;
+              margin-left: 3px;
+              font-size: 15px;
+            }
+            ul li .hua{
+              color: red;
+              font-size: 13px;
+            }
+            .isConfirm{
+              font-size: 12px;
+              margin-left: 62px;
+            }
+            .con{
+              margin-left: 60px;
+              display: inline-block;
+              width: 110px;
+              height: 53px;
+              line-height: 53px;
+            }
+             ul li.addCar a{
+              width: 180px;
+              height: 40px;
+              display: inline-block;
+              border: 1px solid red;
+              text-align: center;
+              line-height: 40px;
+              background-color:#ffeded;
+              color: red;
+              margin-left: 63px;
+             }
+             .service a{
+              display: inline-block;
+              /*margin-left: 5px;*/
+              width: 88px;
+              height: 18px;
+              font-size: 12px;
+             }
+              ul li.addCar a.car{
+                margin-left: 10px;
+                color: #fff;
+                background-color: red;
+              }
+              .tianPhone{
+                width: 1190px;
+                height: 54px;
+              };
+               .tianPhone img.tianPhoneImg{
+                margin: 0 auto;
+                display: block;
+                margin-left: 80px;
+               }
+               .fixBox{
+                width: 100%;
+               }
+               .fix{
+                 width: 1155px;
+                 margin: 0 auto;
+               }
+               .fix .left{float: left;}
+               .fix .left span{
+                display: block;
+                width: 130px;
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+               }
+                .fix .left .keyword{
+                  text-align: left;
+                  width: 112px;
+                  height: 28px;
+                }
+               .fix .left .key{
+                width:110px;
+                height: 26px;
+               }
+               .fix .right{float: left;margin-left: 10px;
+                 width: 790px;
+                 height: 50px;
+               }
+              .fix h3{
+                width: 188px;
+                height: 50px;
+                line-height: 50px;
+                font-size: 12px;
+                
+                text-align: center;
+                border: 1px solid #e5e5e5;
+              }
+               .fix h3:hover{
+                text-decoration: underline;
+                cursor: pointer;
+               }
+              .fix ul{
+                float: left;
+              }
+              .fix ul li:first-child{
+                 border: 1px solid #e5e5e5;
+              }
+              .fix ul li{
+                float: left;
+                width: 90px;
+                height: 49px;
+                line-height: 49px;
+                text-align: center;
+               
+              }
+               .fix ul li.liji{
+               margin-left: 420px;
+               }
+              .bodyRight{
+                width: 35px;
+                height:650px;
+                background: #000;
+                position: fixed;
+                right: 0;
+                top: 0;
+                color: #fff;
+              }
+              .bodyRight ul li{
+                width: 35px;
+                 text-align: center;
+                 margin-top: 40px;
+                 position: relative;
+              }
+              .bodyRight ul li a{
+                display: inline-block;
+                 width: 20px;
+                height: 50px;
+               
+                font-size: 12px;
+              }
+                .bodyRight ul li:hover{
+                    background-color: red;
+                    cursor: pointer;
+
+                }
+                 .bodyRight ul li:hover span{
+                    right: 35px;
+                    opacity: 1;
+                    transition:right 0.9s,opacity 0.9s;
+                    
+                 }
+                 .bodyRight ul li span{
+                   display: inline-block;
+                   width: 90px;
+                   height: 35px;
+                   line-height: 35px;
+                   position: absolute;
+                   right: 48px;
+                   top:0px;
+                   opacity: 0;
+                   background-color: #494949;
+                 }
+           
+    </style>
+  
+  </head>
+  <body>
+    <div class="head">
+      <div class="headInner">
+        <span><a>天猫首页</a></span><i>喵，欢迎来天猫</i><span><a>请登录</a></span><span><a>免费注册</a></span>
+         <ul>  
+            <li id="dropMenu">
+              <a>我的淘宝<i class="arrow"></i></a>
+              <div class="drop" id="drop">
+                <a>已买到的宝贝</a>
+                <a>已卖到的宝贝</a>
+              </div>
+            </li>
+            <li><a>㑉 我关注的品牌</a></li>
+            <li><a>购物车0件</a></li>
+            <li>
+              <a>收藏夹<i class="arrow"></i></a>
+              <div class="drop" id="drop"></div>
+            </li>
+            <li><a>㑈 手机版 淘宝网</a></li>
+            <li><a>商家支持</a></li>
+          <li id="navDrop">
+              <a>网站导航<i class="arrow"></i></a>
+              <div class="dropNav" id="dropNav">
+                <ul class="first">
+                  <h2>热门推荐</h2>
+                  <li><a>天猫超市</a></li> 
+                  <li><a>喵鲜生</a></li> 
+                  <li><a>科技新品</a></li> 
+                  <li><a>女装新品</a></li>
+                  <li><a>酷玩街</a></li> 
+                  <li><a>内衣新品</a></li>
+                  <li><a>试美妆</a></li>
+                  <li><a>运动新品</a></li> 
+                  <li><a>时尚先生</a></li> 
+                  <li><a>精明妈咪</a></li>
+                  <li><a> 吃乐会</a></li>
+                  <li><a>企业采购</a></li>
+                  <li><a>会员积分</a></li>
+                  <li><a> 天猫国际</a></li>
+                  <li><a> 品质频道</a></li>
+                </ul>
+                <ul class="second">
+                  <h2>行业市场 Market</h2>
+                  <li><a>美妆</a></li>
+                  <li><a>电器</a></li>
+                  <li><a>女装</a></li>
+                  <li><a>男装</a></li>
+                  <li><a>女鞋</a></li>
+                  <li><a>男鞋</a></li>
+                  <li><a>内衣</a></li>
+                  <li><a>箱包</a></li>
+                  <li><a>运动</a></li>
+                  <li><a>母婴</a></li>
+                  <li><a>家装</a></li>
+                  <li><a>医药</a></li>
+                  <li><a>食品</a></li>
+                  <li><a>配饰</a></li>
+                  <li><a>汽车</a></li>
+                </ul>
+                <ul class="three">
+                  <h2>品牌风尚Brand</h2>
+                  <li><a>尚天猫</a></li>
+                  <li><a>大牌街</a></li>
+                  <li><a>潮牌街</a></li>
+                  <li><a>天猫原创</a></li>
+                  <li><a>什么牌子好</a></li>
+                </ul>
+                <ul class="four">
+                  <h2>服务指南Help</h2>
+                  <li><a>帮助中心</a></li>
+                  <li><a>品质保障</a></li>
+                  <li> <a>特色服务</a></li>
+                  <li><a>7天退换货</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+      </div>
+    </div>
+    <script type="text/javascript">
+        document.getElementById("dropMenu").onmouseover=function(){
+          this.className="on";
+          document.getElementById("drop").style.display="block";
+        }
+        document.getElementById("dropMenu").onmouseout=function(){
+          this.className="";
+           document.getElementById("drop").style.display="none";
+        }
+        //网站导航
+        document.getElementById("navDrop").onmouseover=function(){
+          this.className="on";
+          document.getElementById("dropNav").style.display="block";
+        }
+        document.getElementById("navDrop").onmouseout=function(){
+          this.className="";
+          document.getElementById("dropNav").style.display="none"
+
+        }
+    </script>
+    <div class="boxSearch">
+      <div class="serachBox">
+        <h1>天猫</h1>
+        <div class="desc">
+          <strong>oppo手机官方旗舰店</strong>
+          <span>描 述4.8服 务4.8物 流</span>
+        </div>
+        <div class="sub">
+          <input class="text" type="text" placeholder="搜索 天猫 商品/品牌/店铺"/>
+          <button>搜天猫</button>
+          <button>搜本店</button>
+          <div class="bottom">       
+            <a>手机</a><a>oppor11</a><a>iphone6</a><a>oppo</a><a>苏宁易购</a><a>oppor9s</a><a>苏宁</a><a>oppor9</a>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="recomBox">
+      <div class="recom">
+        <a class="bg"></a>
+        <div class="list">
+          <a>首页</a>
+          <a>R11直降200元</a>
+          <a>R11直降200元</a>
+          <a>旗舰R系列</a>
+          <a>旗舰R系列</a>
+          <a>经典A系列</a>
+          <a>经典A系列</a>
+          <a>手机专区</a>
+          <a>手机专区</a>
+          <a>店铺服务</a>
+          <a>店铺服务</a>
+          <a>中奖名单</a>
+          <a>中奖名单</a>
+        </div>
+      </div>
+    </div>
+    <div class="detail">
+      <div class="goodDetail">
+        <div class="good" id="good">
+          <img class="xiaotu" src="./img/TB1pWI5kol7MKJjSZFDXXaOEpXa_!!0-item_pic.jpg_430x430q90.jpg"/>
+          <div class="fangdajing" id="fangdajing"></div>
+          <div class="fangdahou" id="fangdahou"></div>
+          <!-- <ul class="smallImgs"> -->
+         <!--   <img width="60px" height="60px" src="./img/xiao.png"/>
+           <img width="60px" height="60px" src="./img/xiao.png"/>
+           <img width="60px" height="60px" src="./img/xiao.png"/> -->
+          <!-- </ul> -->
+
+        </div>
+        <div class="middle">
+           <h1> <a>【直降200元】OPPO R11 全网通前后2000万指纹识别拍照手机r11r9s</a></h1>
+           <p class="">12期免息 购机享专属大礼包</p>
+           <img src="./img/jiaimg.png"/>
+           <span class="free">运费</span><span class="address">广东东莞至 北京东城区 东华门街道 快递: 0.00</span>
+           <div class="xiaoliang"><span>月销量22087</span>
+                <span>累计评价50616</span>
+                <span>送天猫积分279起</span>
+           </div>
+           <ul>
+             <li class="version">版本<span>R11</span><span>R11全球通</span><span>R11 PLUS</span></li>
+             <li class="color">机身颜色<span>绿色</span><span>绿色</span><span>绿色</span><span>绿色</span></li>
+             <li class="phoneType">套餐类型<span>官方标配</span></li>
+            
+             <li class="store"> 存储容量<span>64G</span></li>
+             <li class="versionAddress">版本类型<span>中国大陆</span></li>
+             <li class="phoneNum">数量<span>1</span>
+                <div class="opera"><span class="add">^</span><span class="mul">-</span></div>
+             </li>
+             <li>花呗分期<span class="hua">该商品最高可享12期分期免息</span></li>
+             <li><span class="isConfirm">登录后确认是否享有该服务 什么是花呗分期</span></li>
+             <li><span class="con">933.0起*3期</span><span  class="con">933.0起*3期</span><span class="con">933.0起*3期</span></li>
+             <li class="addCar"><a>立即购买</a><a class="car">加入购物车</a></li>
+            <li class="service"><a>服务承诺</a>
+                <a>全国联保</a><a>免举证退换货</a><a>正品保证</a><a>极速退款</a>
+                <a>赠运费险</a><a>七天无理由退换</a></li>
+           </ul>
+        </div>
+        <div class="right">
+          <span>看了又看</span>
+          <img width="140px" height="140px" src="./img/TB1rVOIXU6FK1Jjy1XbXXXovXXa_!!0-item_pic.jpg_160x160q90.jpg"/>
+         <span>【大屏旗舰】OPPO R11 Plus全网</span>
+          <img width="140px" height="140px" src="./img/TB1rVOIXU6FK1Jjy1XbXXXovXXa_!!0-item_pic.jpg_160x160q90.jpg"/>
+         <span>【大屏旗舰】OPPO R11 Plus全网</span>
+        </div>
+      </div>
+      <div class="tianPhone">
+        <img class="tianPhoneImg" style="margin-left: 100px;" width="990px" height="50px" src="./img/TB1U3r4PpXXXXX2apXXXXXXXXXX-990-50.png"/></div>
+        <div class="fixBox">
+          <div class="fix">
+            <div class="left">
+              <h3>oppo手机官方旗舰店</h3>
+              <span>天猫6年店</span>
+              <span>描述服务物流</span>
+              <h3>本店搜索</h3>
+              <div><span class="keyword">关键字</span><input class="key" type="text" placeholder="关键字"/></div>
+              <span>描述服务物流</span>
+               <h3>oppo手机官方旗舰店</h3>
+              <span>天猫6年店</span>
+              <span>描述服务物流</span>
+              <h3>本店搜索</h3>
+              <div><span class="keyword">关键字</span><input class="key" type="text" placeholder="关键字"/></div>
+              <span>描述服务物流</span>
+            </div>
+            <div class="right">
+              <ul>
+                <li>商品详情</li>
+                <li>规格参数</li>
+                <li>累计评价</li>
+                <li class="liji">立即购买</li>
+              </ul>
+              <h4>商品具有中国强制性产品认证（CCC）编号，符合国家CCC认证标准</h4>
+            </div>
+          </div>
+        </div>
+        <div class="bodyRight">
+         <!--  <div class="maiCar">
+          <span>我的资产</span>
+          <a>购物车</a></div> -->
+          <ul>
+            <li>
+              <a>购物车</a>
+              <span>我的资产</span>
+            </li>
+
+          </ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="./js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+         var good=$(".good");
+         var fangdajing=$(".fangdajing");
+         var fangdahou=$(".fangdahou");
+         var xiaotu=$(".xiaotu");
+         var fangdajing_left = 0;
+          var fangdajing_top  = 0;
+          var fangdajing_width = fangdajing.width();
+          var fangdajing_height = fangdajing.height();
+          var xiaotu_width = xiaotu.width();
+          var xiaotu_height = xiaotu.height();
+          var xiaotu_left   = xiaotu.offset().left;
+          var xiaotu_top    = xiaotu.offset().top;
+           good.mouseenter(function(e){
+            fangdajing.show();
+            fangdahou.show();
+          
+         })
+         good.mousemove(function(e){
+          fangdajing_left = e.pageX-xiaotu_left-fangdajing_width/2;
+          fangdajing_top  = e.pageY-xiaotu_top-fangdajing_height/2;
+          if(fangdajing_left<0){
+            fangdajing_left=0;
+          }else if(fangdajing_left>xiaotu_width-fangdajing_width){
+            fangdajing_left=xiaotu_width-fangdajing_width;
+          }
+
+          if(fangdajing_top<0){
+            fangdajing_top=0;
+          }else if(fangdajing_top>xiaotu_height-fangdajing_height){
+            fangdajing_top=xiaotu_height-fangdajing_height;
+          }
+
+          fangdajing.css({left:fangdajing_left, top:fangdajing_top});
+          //
+           bj_left = 430*fangdajing_left/200;
+           bj_top  = 7430*fangdajing_top/200;
+
+          fangdahou.css('background-position', '-'+bj_left+'px -'+bj_top+'px')
+
+        })
+         good.mouseleave(function(e){
+            fangdajing.hide();
+            fangdahou.hide();
+         })
+      })
+     
+
+    </script>
+  </body>
+</html>
